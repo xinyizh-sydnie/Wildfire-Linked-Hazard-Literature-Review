@@ -1,0 +1,28 @@
+# Python dependencies for the analysis code.
+#
+# These are the packages the scripts import directly. Version FLOORS are given
+# as a starting point. For exact reproducibility, replace this file with the
+# output of `pip freeze` from the environment that generated the results,
+# especially for cartopy and regionmask, which are sensitive to version.
+#
+# cartopy, regionmask, and rasterio depend on system geospatial libraries
+# (GEOS, PROJ, GDAL). If pip install fails, install these via conda-forge.
+
+# Core scientific stack
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+matplotlib>=3.7
+
+# Geospatial
+cartopy>=0.22
+regionmask>=0.10
+rasterio>=1.3
+shapely>=2.0
+
+# 01_llm_classification.py (literature classification)
+openai>=1.0
+tqdm>=4.65
+
+# 00_preprocess_hotspots.py (Google Earth Engine; Colab-oriented)
+earthengine-api>=0.1.380
