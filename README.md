@@ -9,26 +9,19 @@ This repository contains the analysis code and the processed data needed to repr
 ```
 .
 ├── README.md
-├── LICENSE                       MIT (code). Data and processed outputs: CC BY 4.0 (see License).
+├── LICENSE                       
 ├── requirements.txt
 ├── .gitignore
 ├── code/
 │   ├── 00_preprocess_hotspots.py   Earth Engine: build 50 km fire + compound-hazard rasters (SI C1, C2)
 │   ├── 01_llm_classification.py    LLM screening + classification of the literature corpus (SI B)
 │   ├── 02_rr.py            Relative-risk analysis and Figure 4 / Figure D1 (SI C3, D)
-│   ├── 03_mismatch_sensitivity.py  Mismatch indices, resolution sensitivity, SM Tables E1–E4, C7–C9 (SI C5)
-│   └── srex_regions.py             Helper: loads the IPCC SREX regions via regionmask (see SREX reference regions)
+│   └── 03_mismatch_sensitivity.py  Mismatch indices, resolution sensitivity, SM Tables E1–E4, C7–C9 (SI C5)
 └── data/
-    ├── study_table.csv             Classified literature table (output of 01, trimmed). Tracked.
-    ├── validation_set.csv          350-record validation subset. Tracked.
-    ├── hotspot_50km/               Output of 00 (yearly fire + compound rasters). Not tracked; large.
-    ├── grdi/                       GRDI raster (download from SEDAC). Not tracked.
-    ├── wui/                        10 km WUI fraction rasters (derived from Schug et al. 2023). Not tracked.
-    ├── land_10km/                  10 km land/setting rasters (derived from Schug et al. 2023). Not tracked.
-    └── external/                   Kelley et al. (2019) figure (copyright; obtain separately). Not tracked.
-```
+    ├── study_table.csv             Classified literature table (output of 01, trimmed). 
+    └──  validation_set.csv          350-record validation subset.
 
-Scripts read from `data/` and write to `outputs/` by default. Both paths can be redirected with the `DATA_DIR` and `OUTPUT_DIR` environment variables (useful when running on Google Colab with a Drive copy of the data).
+```
 
 ## Installation
 
@@ -60,12 +53,12 @@ The global analysis uses four publicly available datasets plus a subscription da
 Not included, and why:
 - Raw Web of Science records and abstract text are not shared (Web of Science terms and publisher copyright). `study_table.csv` contains only the derived classification labels and geoparsed bounding boxes, not abstract text. The article identifiers in `study_table.csv` allow re-retrieval of the corpus by anyone with Web of Science access.
 - The four raw rasters above are large and externally hosted, so they are cited rather than mirrored.
-- The Kelley et al. (2019) fire-regime figure used in the Figure D1 overlay is copyrighted (Springer Nature). It is not committed; download it from https://www.nature.com/articles/s41558-019-0540-7 and place it at `data/external/kelley2019_fig2.jpg`.
+- The Kelley et al. (2019) fire-regime figure used in the Figure D1 overlay is copyrighted (Springer Nature). It is not committed; download it from https://www.nature.com/articles/s41558-019-0540-7.
 - The 10 km WUI and land/setting rasters (`data/wui/`, `data/land_10km/`) are aggregated from the Schug et al. (2023) 10 m product following SI Section C1.3. The aggregation step itself is described in the SI but is not included as a separate script in this repository.
 
 ### SREX reference regions
 
-The 26 IPCC SREX reference regions are not stored in this repository. `code/srex_regions.py` loads them at runtime from the `regionmask` package and adds helper functions (region assignment and plotting). The region definitions originate from the IPCC Special Report on Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation (SREX): Seneviratne et al. (2012), in *Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation*, Cambridge University Press, pp. 109–230. The `regionmask` implementation is documented at https://regionmask.readthedocs.io. Please use the SREX citation as it appears in the manuscript for consistency.
+The 26 IPCC SREX reference regions are not stored in this repository.The region definitions originate from the IPCC Special Report on Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation (SREX): Seneviratne et al. (2012), in *Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation*, Cambridge University Press, pp. 109–230. The `regionmask` implementation is documented at https://regionmask.readthedocs.io. Please use the SREX citation as it appears in the manuscript for consistency.
 
 ## Reproducing the analysis
 
