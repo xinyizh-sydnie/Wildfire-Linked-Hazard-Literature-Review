@@ -1,0 +1,34 @@
+# Generated outputs (figures, tables, caches written by the scripts)
+outputs/
+
+# Large / third-party data, not redistributed (see README "Data sources")
+data/hotspot_50km/
+data/grdi/
+data/wui/
+data/land_10km/
+data/external/
+
+# Raster and NetCDF files anywhere under data/.
+# The tracked study_table.csv and validation_set.csv live in data/ root and are NOT matched.
+data/**/*.tif
+data/**/*.tiff
+data/**/*.nc
+
+# Raw Web of Science exports contain copyrighted abstracts: never commit
+filtered_data.csv
+*_wos_export*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+venv/
+.venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
