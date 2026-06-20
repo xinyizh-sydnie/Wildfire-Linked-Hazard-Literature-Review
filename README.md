@@ -15,7 +15,7 @@ This repository contains the analysis code and the processed data needed to repr
 ├── code/
 │   ├── 00_preprocess_hotspots.py   Earth Engine: build 50 km fire + compound-hazard rasters (SI C1, C2)
 │   ├── 01_llm_classification.py    LLM screening + classification of the literature corpus (SI B)
-│   ├── 02_rr_figure4.py            Relative-risk analysis and Figure 4 / Figure D1 (SI C3, D)
+│   ├── 02_rr.py            Relative-risk analysis and Figure 4 / Figure D1 (SI C3, D)
 │   ├── 03_mismatch_sensitivity.py  Mismatch indices, resolution sensitivity, SM Tables E1–E4, C7–C9 (SI C5)
 │   └── srex_regions.py             Helper: loads the IPCC SREX regions via regionmask (see SREX reference regions)
 └── data/
