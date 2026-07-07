@@ -18,9 +18,8 @@ This repository contains the analysis code and the processed data needed to repr
 │   ├── 02_rr.py            Relative-risk analysis and Figure 4 / Figure D1 (SI C3, D)
 │   └── 03_mismatch_sensitivity.py  Mismatch indices, resolution sensitivity, SM Tables E1–E4, C7–C9 (SI C5)
 └── data/
-    ├── study_table.csv             Classified literature table (output of 01, trimmed). 
-    └──  validation_set.csv          350-record validation subset.
-
+    └── study_table.csv             Classified literature table (output of 01). 
+   
 ```
 
 ## Installation
@@ -58,7 +57,7 @@ Not included, and why:
 
 ### SREX reference regions
 
-The 26 IPCC SREX reference regions are not stored in this repository.The region definitions originate from the IPCC Special Report on Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation (SREX): Seneviratne et al. (2012), in *Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation*, Cambridge University Press, pp. 109–230. The `regionmask` implementation is documented at https://regionmask.readthedocs.io. Please use the SREX citation as it appears in the manuscript for consistency.
+The 26 IPCC SREX reference regions are not stored in this repository. The region definitions originate from the IPCC Special Report on Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation (SREX): Seneviratne et al. (2012), in *Managing the Risks of Extreme Events and Disasters to Advance Climate Change Adaptation*, Cambridge University Press, pp. 109–230. The `regionmask` implementation is documented at https://regionmask.readthedocs.io. Please use the SREX citation as it appears in the manuscript for consistency.
 
 ## Reproducing the analysis
 
